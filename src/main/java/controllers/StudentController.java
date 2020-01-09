@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,12 +17,11 @@ import services.CityService;
 
 @Controller
 @ComponentScan("services")
-@RequestMapping("/students")
+@RequestMapping("/")
 public class StudentController {
 	@Autowired
 	private CityService cityService;
-	
-	@RequestMapping("/show-form")
+	@GetMapping
 	public String showForm(Model theModel) {
 
 		// create a student object
